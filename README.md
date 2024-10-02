@@ -9,17 +9,13 @@ This repository features a machine learning project aimed at developing a custom
 - [Dataset](#dataset)
 - [Methodology](#methodology)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
 The goal of this project is to identify diseases and treatments from unstructured medical text. The project involves:
 
 - **Data Preprocessing**: Cleaning and transforming raw medical text into structured sentences with corresponding labels.
-- **Feature Engineering**: Creating relevant features for each word, including word identity, capitalization, and context-based features (e.g., neighboring words).
+- **Feature Engineering**: Creating relevant features for each word, including word identity, capitalization, and context-based features
 - **Model Building**: Training a Conditional Random Fields (CRF) model to assign disease (D) and treatment (T) labels to the dataset.
 - **Evaluation**:: Predicting labels for the test dataset and extracting predicted treatments associated with each disease.
 
@@ -38,11 +34,12 @@ The project is divided into several steps:
    
 2. **Feature Engineering**: 
    - Define features for each word, including:
+     - Capitalization check
+     - Numeric status (whether the word is numeric or not)
+     - Contextual features (characteristics of previous and next words)
      - Word identity (lowercased)
      - Suffixes (last 2-3 characters)
-     - Capitalization check
-     - Word is numeric or not
-     - Contextual features (previous and next word characteristics)
+     
      
 3. **Model Building**:
    - A Conditional Random Fields (CRF) model is trained using the `sklearn_crfsuite` library.
